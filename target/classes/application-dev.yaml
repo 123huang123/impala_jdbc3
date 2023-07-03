@@ -1,0 +1,23 @@
+server:
+  port: 9999
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    druid:
+      impala:
+        jdbc-url: jdbc:impala://hop1:21050/animal
+    #    username: root
+    #    password: 123huang
+        driver-class-name: com.cloudera.impala.jdbc41.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+      mysql:
+        jdbc-url: jdbc:mysql://localhost:3306/ruiji
+        username: root
+        password: 123huang
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+
+

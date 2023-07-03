@@ -1,0 +1,6 @@
+qidong\controller\GetDataController.class
+student_q.class
+qidong\service\GetDataService.class
+qidong\mapper\StudentMapper.class
+qidong\RealDemoApplication.class
+qidong\pojo\student_HDFS.class

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+    namespace:名称空间
+-->
+
+<mapper namespace="qidong.mapper.MysqlMapper.RuijiMapper">
+    <!--statement-->
+    <select id="selectAll" resultType="java.util.Map">
+        select * from user ;
+</select>
+
+    <insert id="putAll_foreach">
+        insert into student (num,name,sex,age,dept) values
+        <foreach collection ="students" item="student" separator =",">
+         (#{student.num},#{student.name},#{student.sex},#{student.age},#{student.dept})
+        </foreach>
+    </insert>
+
+    <insert id="putAll_batch">
+        insert into student (num,name,sex,age,dept) values
+            (#{num},#{name},#{sex},#{age},#{dept})
+            on DUPLICATE KEY UPDATE  age=values(age), dept =values(dept);
+    </insert>
+
+</mapper>

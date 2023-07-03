@@ -1,0 +1,23 @@
+server:
+  port: 9999
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  datasource:
+    url: jdbc:impala://hop1:21050/animal
+#    username: root
+#    password: 123huang
+    driver-class-name: com.cloudera.impala.jdbc41.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# 分页配置
+pagehelper:
+  helperDialect: impala
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+  offsetAsPageNum: true
+  pageSizeZero: true
+  #  dialectAlias: mysql=com.github.pagehelper.dialect.helper.MySqlDialect mysql采用的方式
